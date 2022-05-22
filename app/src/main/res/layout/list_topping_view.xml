@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="enquiryModel"
+            type="com.os.onlinefood.data.model.ToppingMaster" />
+
+        <import type="com.os.onlinefood.util.TextUtillity" />
+    </data>
+
+
+    <!--<androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="2dp"
+        android:layout_marginEnd="4dp"
+        android:layout_marginBottom="2dp"
+        app:cardCornerRadius="4dp"
+        app:cardElevation="2dp"
+        app:cardMaxElevation="8dp">-->
+    <LinearLayout
+        android:id="@+id/rootLayout"
+        android:clickable="true"
+        android:focusable="true"
+        android:orientation="vertical"
+        android:background="@color/white"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_marginStart="4dp"
+            android:layout_marginTop="2dp"
+            android:layout_marginEnd="4dp"
+            android:layout_marginBottom="2dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <RelativeLayout
+                android:id="@+id/mainView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="4dp">
+
+                <RelativeLayout
+                    android:id="@+id/img_n"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="8dp"
+                    android:background="@drawable/circle"
+                    android:backgroundTint="@{TextUtillity.getRandomColor()}"
+                    android:gravity="center_vertical"
+                    android:padding="4dp">
+
+                    <com.os.onlinefood.util.CustomTextView
+                        android:id="@+id/firstText"
+                        style="@style/TextAppearance.AppCompat.Title"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        android:text="@{TextUtillity.firstText(enquiryModel.toppingType)}"
+                        android:textSize="14sp" />
+                </RelativeLayout>
+                <com.os.onlinefood.util.CustomTextView
+                    android:id="@+id/enqID"
+                    style="@style/TextAppearance.AppCompat.Subhead"
+                    android:fontFamily="@font/poppins"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginEnd="4dp"
+                    android:layout_toEndOf="@id/img_n"
+                    android:ellipsize="end"
+                    android:text="@{TextUtillity.convertToString(enquiryModel.toppingId)}"
+                    android:textSize="12sp" />
+                <com.os.onlinefood.util.CustomTextView
+                    android:id="@+id/title"
+                    style="@style/TextAppearance.AppCompat.Subhead"
+                    android:fontFamily="@font/poppins"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_below="@id/enqID"
+                    android:layout_marginTop="2dp"
+                    android:layout_marginEnd="4dp"
+                    android:layout_toEndOf="@id/img_n"
+                    android:ellipsize="end"
+                    android:text="@{enquiryModel.toppingType}"
+                    android:textSize="14sp" />
+                <!--TextUtillity.completeName(enquiryModel.serviceLine,enquiryModel.pin,enquiryModel.country)-->
+                <com.os.onlinefood.util.CustomTextView
+                    android:id="@+id/subtitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/title"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="1dp"
+                    android:layout_toEndOf="@id/img_n"
+                    android:ellipsize="end"
+                    android:text="Price : "
+                    textSize="12sp" />
+
+                <com.os.onlinefood.util.CustomTextView
+                    android:id="@+id/count"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/title"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="1dp"
+                    android:layout_toRightOf="@id/subtitle"
+                    android:ellipsize="end"
+                    textSize="100" />
+
+
+
+            </RelativeLayout>
+
+
+
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:layout_marginStart="80dp"
+            android:layout_marginTop="4dp"
+            android:background="@color/cpb_grey" />
+    </LinearLayout>
+    <!--</androidx.cardview.widget.CardView>-->
+
+</layout>
